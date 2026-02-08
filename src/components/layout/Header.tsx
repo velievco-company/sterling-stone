@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const navLinks = [
   { name: "Home", path: "/" },
@@ -35,11 +36,8 @@ const Header = () => {
       }`}
     >
       <nav className="max-w-7xl mx-auto px-6 lg:px-12 py-5 flex items-center justify-between">
-        <Link
-          to="/"
-          className="font-playfair text-xl md:text-2xl font-bold text-foreground tracking-wide"
-        >
-          Ashworth & Sterling
+        <Link to="/" className="flex items-center gap-3">
+          <img src={logo} alt="Ashworth & Sterling" className="h-10 md:h-12 w-auto" />
         </Link>
 
         {/* Desktop nav */}
