@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import logo from "@/assets/logo.png";
 
 const Footer = () => {
   return (
@@ -7,9 +8,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* Brand */}
           <div>
-            <h3 className="font-playfair text-xl font-bold text-foreground mb-4">
-              Ashworth & Sterling
-            </h3>
+            <img src={logo} alt="Ashworth & Sterling" className="h-12 w-auto mb-4" />
             <p className="text-muted-foreground text-sm leading-relaxed max-w-xs">
               Discreet Excellence. Measurable Results. Strategic reputation
               management for discerning clients.
