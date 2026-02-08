@@ -35,7 +35,7 @@ const Header = () => {
   }, [location]);
   return <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? "bg-background/95 backdrop-blur-md shadow-[0_4px_30px_-10px_rgba(0,0,0,0.4)]" : "bg-transparent"}`}>
       <nav className="max-w-7xl mx-auto px-6 lg:px-12 py-5 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-3 header gap-32">
+        <Link to="/" className="flex items-center gap-3.5 header gap-32">
           <img src={logo} alt="Ashworth & Sterling" className="h-10 md:h-12 w-auto" />
         </Link>
 
