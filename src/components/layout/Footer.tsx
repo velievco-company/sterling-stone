@@ -34,7 +34,7 @@ const Footer = () => {
                 <Link
                   key={link.path}
                   to={link.path}
-                  className="text-muted-foreground text-sm hover:text-primary transition-colors duration-300"
+                  className="text-muted-foreground text-sm hover:text-brown transition-colors duration-300"
                 >
                   {link.name}
                 </Link>
@@ -51,7 +51,7 @@ const Footer = () => {
               {/* LinkedIn */}
               <a
                 href="#"
-                className="text-muted-foreground hover:text-primary transition-colors duration-300"
+                className="text-muted-foreground hover:text-brown transition-colors duration-300"
                 aria-label="LinkedIn"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -61,7 +61,7 @@ const Footer = () => {
               {/* WhatsApp */}
               <a
                 href="#"
-                className="text-muted-foreground hover:text-primary transition-colors duration-300"
+                className="text-muted-foreground hover:text-brown transition-colors duration-300"
                 aria-label="WhatsApp"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -71,7 +71,7 @@ const Footer = () => {
               {/* Instagram */}
               <a
                 href="#"
-                className="text-muted-foreground hover:text-primary transition-colors duration-300"
+                className="text-muted-foreground hover:text-brown transition-colors duration-300"
                 aria-label="Instagram"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -92,7 +92,7 @@ const Footer = () => {
           </p>
           <Link
             to="/privacy"
-            className="text-muted-foreground text-xs hover:text-primary transition-colors duration-300"
+            className="text-muted-foreground text-xs hover:text-brown transition-colors duration-300"
           >
             Privacy Policy
           </Link>

@@ -146,7 +146,7 @@ const Contact = () => {
                   </p>
                   <a
                     href="mailto:enquiries@ashworthsterling.com"
-                    className="text-foreground hover:text-primary transition-colors duration-300 text-lg"
+                    className="text-foreground hover:text-brown transition-colors duration-300 text-lg"
                   >
                     enquiries@ashworthsterling.com
                   </a>
@@ -170,7 +170,7 @@ const Contact = () => {
                   <div className="flex gap-5">
                     <a
                       href="#"
-                      className="text-muted-foreground hover:text-primary transition-colors duration-300"
+                      className="text-muted-foreground hover:text-brown transition-colors duration-300"
                       aria-label="LinkedIn"
                     >
                       <svg
@@ -183,7 +183,7 @@ const Contact = () => {
                     </a>
                     <a
                       href="#"
-                      className="text-muted-foreground hover:text-primary transition-colors duration-300"
+                      className="text-muted-foreground hover:text-brown transition-colors duration-300"
                       aria-label="WhatsApp"
                     >
                       <svg
@@ -196,7 +196,7 @@ const Contact = () => {
                     </a>
                     <a
                       href="#"
-                      className="text-muted-foreground hover:text-primary transition-colors duration-300"
+                      className="text-muted-foreground hover:text-brown transition-colors duration-300"
                       aria-label="Instagram"
                     >
                       <svg

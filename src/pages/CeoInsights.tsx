@@ -90,7 +90,7 @@ const CeoInsights = () => {
                           {article.readTime}
                         </span>
                       </div>
-                      <h2 className="font-cormorant text-2xl md:text-3xl font-light text-foreground group-hover:text-primary transition-colors duration-300 mb-4 leading-snug">
+                      <h2 className="font-cormorant text-2xl md:text-3xl font-light text-foreground group-hover:text-brown transition-colors duration-300 mb-4 leading-snug">
                         {article.title}
                       </h2>
                       <p className="text-muted-foreground text-sm leading-relaxed max-w-2xl">
@@ -98,7 +98,7 @@ const CeoInsights = () => {
                       </p>
                     </div>
                     <div className="flex-shrink-0 self-center">
-                      <ArrowRight className="h-5 w-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all duration-300" />
+                      <ArrowRight className="h-5 w-5 text-muted-foreground group-hover:text-brown group-hover:translate-x-1 transition-all duration-300" />
                     </div>
                   </div>
                 </article>

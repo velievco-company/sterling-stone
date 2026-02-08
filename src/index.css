@@ -31,6 +31,8 @@
     --border: 211 30% 20%;
     --input: 211 30% 25%;
     --ring: 30 39% 85%;
+    --brown: 30 40% 38%;
+    --brown-foreground: 210 11% 97%;
 
     --radius: 1rem;
 
@@ -51,7 +53,16 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply text-foreground;
+    background: linear-gradient(
+      180deg,
+      hsl(209 60% 11%) 0%,
+      hsl(211 53% 16%) 40%,
+      hsl(30 25% 50%) 80%,
+      hsl(30 39% 85%) 100%
+    );
+    background-attachment: fixed;
+    min-height: 100vh;
   }
 
   h1, h2 {
