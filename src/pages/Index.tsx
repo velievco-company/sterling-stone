@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Shield, TrendingUp, Target, Users, ArrowRight, Award, Globe } from "lucide-react";
+import { Shield, Target, ArrowRight, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ScrollReveal from "@/components/ScrollReveal";
 const Index = () => {
@@ -79,64 +79,76 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Services Preview */}
+      {/* Reputation Management Packages */}
       <section className="py-24 lg:py-32">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <ScrollReveal>
             <div className="text-center mb-20">
               <p className="font-playfair text-sm uppercase tracking-[0.3em] text-primary mb-4">
-                What We Do
+                Reputation Management
               </p>
               <h2 className="font-cormorant text-4xl md:text-5xl font-light text-foreground">
-                Our Services
+                Our Packages
               </h2>
             </div>
           </ScrollReveal>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {[{
-            icon: Shield,
-            title: "Reputation Management",
-            desc: "Comprehensive online reputation protection, monitoring, and enhancement for individuals and organisations."
-          }, {
-            icon: TrendingUp,
-            title: "Lead Generation",
-            desc: "Sophisticated lead acquisition strategies that deliver qualified prospects through premium channels."
-          }, {
-            icon: Globe,
-            title: "Paid Advertising",
-            desc: "Strategic media buying and campaign management across premium digital platforms."
-          }, {
-            icon: Users,
-            title: "Strategy & Consulting",
-            desc: "Executive-level strategic counsel for brands navigating complex reputational landscapes."
-          }].map((service, i) => <ScrollReveal key={service.title} delay={i * 100}>
-                <div className="group bg-card rounded-3xl p-10 border border-border hover:border-primary/30 transition-all duration-500 hover:shadow-[0_8px_40px_-12px_hsl(30_39%_85%/0.15)] hover:-translate-y-1">
-                  <div className="flex items-start gap-6">
-                    <div className="flex-shrink-0 w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-500">
-                      <service.icon className="h-5 w-5 text-primary" />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                tier: "Basic",
+                name: "Monitoring & Reviews",
+                features: ["Brand mention monitoring", "Review responses (Google, Trustpilot, Yelp)", "Monthly reputation report", "Negative mention alerts"],
+                highlight: false,
+              },
+              {
+                tier: "Professional",
+                name: "Growth & Visibility",
+                features: ["Everything in Basic", "SEO optimisation", "SERM (search reputation management)", "Content marketing (2 articles/month)", "Social media management"],
+                highlight: true,
+              },
+              {
+                tier: "Enterprise",
+                name: "Full Management",
+                features: ["Everything in Professional", "PR & media relations", "Paid advertising (PPC, targeting)", "Crisis management 24/7", "Strategic consulting", "Dedicated account manager"],
+                highlight: false,
+              },
+            ].map((pkg, i) => (
+              <ScrollReveal key={pkg.tier} delay={i * 150}>
+                <div className={`relative flex flex-col h-full rounded-3xl p-8 lg:p-10 border transition-all duration-500 hover:-translate-y-1 ${
+                  pkg.highlight
+                    ? "border-primary bg-primary/5 shadow-[0_8px_40px_-12px_hsl(30_39%_85%/0.25)]"
+                    : "border-border bg-card hover:border-primary/30 hover:shadow-[0_8px_40px_-12px_hsl(30_39%_85%/0.15)]"
+                }`}>
+                  {pkg.highlight && (
+                    <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                      <span className="bg-primary text-primary-foreground text-xs font-playfair uppercase tracking-[0.2em] px-4 py-1 rounded-full">
+                        Popular
+                      </span>
                     </div>
-                    <div>
-                      <h3 className="font-playfair text-lg text-foreground mb-3">
-                        {service.title}
-                      </h3>
-                      <p className="text-muted-foreground text-sm leading-relaxed">
-                        {service.desc}
-                      </p>
-                    </div>
+                  )}
+                  <p className="font-playfair text-xs uppercase tracking-[0.3em] text-primary mb-3">{pkg.tier}</p>
+                  <h3 className="font-cormorant text-2xl lg:text-3xl font-light text-foreground mb-6">{pkg.name}</h3>
+                  <div className="space-y-3 mb-8 flex-grow">
+                    {pkg.features.map((f) => (
+                      <div key={f} className="flex items-start gap-3">
+                        <Shield className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
+                        <span className="text-sm text-muted-foreground">{f}</span>
+                      </div>
+                    ))}
                   </div>
+                  <Link to="/contact" className="mt-auto">
+                    <Button
+                      className={`w-full rounded-2xl py-5 font-playfair tracking-wider uppercase transition-all duration-300 ${pkg.highlight ? "hover:scale-105 shadow-lg hover:shadow-xl" : ""}`}
+                      variant={pkg.highlight ? "default" : "outline"}
+                    >
+                      Get Started
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </Button>
+                  </Link>
                 </div>
-              </ScrollReveal>)}
+              </ScrollReveal>
+            ))}
           </div>
-          <ScrollReveal delay={400}>
-            <div className="text-center mt-12">
-              <Link to="/services">
-                <Button variant="outline" className="rounded-2xl px-8 py-5 font-playfair tracking-wider uppercase border-primary/30 text-primary hover:bg-primary/10 hover:text-primary">
-                  Explore All Services
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </Link>
-            </div>
-          </ScrollReveal>
         </div>
       </section>
 
