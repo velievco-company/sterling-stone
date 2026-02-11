@@ -1,5 +1,5 @@
 import ScrollReveal from "@/components/ScrollReveal";
-
+import ceoPhoto from "@/assets/ceo-photo.jpg";
 
 const About = () => {
   return (
@@ -53,17 +53,8 @@ const About = () => {
             </ScrollReveal>
             <ScrollReveal delay={200}>
               <div className="relative">
-                <div className="aspect-[4/5] rounded-3xl bg-gradient-to-br from-secondary to-background border border-border overflow-hidden">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-center">
-                      <p className="font-cormorant text-7xl font-light text-primary mb-2">
-                        10+
-                      </p>
-                      <p className="font-playfair text-xs uppercase tracking-[0.3em] text-muted-foreground">
-                        Years of Excellence
-                      </p>
-                    </div>
-                  </div>
+                <div className="aspect-[4/5] rounded-3xl overflow-hidden border border-border">
+                  <img src={ceoPhoto} alt="CEO of Veliev & Co" className="w-full h-full object-cover object-top" />
                 </div>
                 <div className="absolute -bottom-6 -left-6 w-32 h-32 rounded-3xl bg-primary/5 border border-primary/10" />
               </div>

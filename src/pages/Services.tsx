@@ -6,43 +6,43 @@ import ScrollReveal from "@/components/ScrollReveal";
 const packages = [
   {
     tier: "Basic",
-    name: "Мониторинг & Отзывы",
-    desc: "Базовый пакет для контроля онлайн-репутации: отслеживание упоминаний и профессиональная работа с отзывами.",
+    name: "Monitoring & Reviews",
+    desc: "Essential package for online reputation control: brand mention tracking and professional review management.",
     features: [
-      "Мониторинг упоминаний бренда",
-      "Ответы на отзывы (Google, Trustpilot, Yelp)",
-      "Ежемесячный отчёт по репутации",
-      "Оповещения о негативных упоминаниях",
-      "Базовая аналитика",
+      "Brand mention monitoring",
+      "Review responses (Google, Trustpilot, Yelp)",
+      "Monthly reputation report",
+      "Negative mention alerts",
+      "Basic analytics",
     ],
     highlight: false,
   },
   {
     tier: "Professional",
-    name: "Рост & Продвижение",
-    desc: "Комплексный пакет: управление репутацией дополнено SEO-оптимизацией и SERM-стратегией для усиления вашего присутствия в поиске.",
+    name: "Growth & Visibility",
+    desc: "Comprehensive package: reputation management enhanced with SEO optimisation and SERM strategy to boost your search presence.",
     features: [
-      "Всё из пакета Basic",
-      "SEO-оптимизация",
-      "SERM (управление поисковой выдачей)",
-      "Контент-маркетинг (2 статьи/месяц)",
-      "Управление социальными сетями",
-      "Еженедельная отчётность",
+      "Everything in Basic",
+      "SEO optimisation",
+      "SERM (search reputation management)",
+      "Content marketing (2 articles/month)",
+      "Social media management",
+      "Weekly reporting",
     ],
     highlight: true,
   },
   {
     tier: "Enterprise",
-    name: "Полное Управление",
-    desc: "Максимальный пакет для бизнеса, включающий PR-сопровождение, расширенный контент-маркетинг и стратегическое консультирование.",
+    name: "Full Management",
+    desc: "Maximum-tier package for businesses, including PR support, extended content marketing, and strategic consulting.",
     features: [
-      "Всё из пакета Professional",
-      "PR-сопровождение и медиарилейшнз",
-      "Расширенный контент-маркетинг (8+ материалов/месяц)",
-      "Paid Advertising (PPC, таргет)",
-      "Стратегическое консультирование",
-      "Кризисный менеджмент 24/7",
-      "Персональный аккаунт-менеджер",
+      "Everything in Professional",
+      "PR & media relations",
+      "Extended content marketing (8+ pieces/month)",
+      "Paid advertising (PPC, targeting)",
+      "Strategic consulting",
+      "Crisis management 24/7",
+      "Dedicated account manager",
     ],
     highlight: false,
   },
@@ -56,12 +56,12 @@ const Services = () => {
         <div className="max-w-5xl mx-auto px-6 text-center">
           <ScrollReveal>
             <p className="font-playfair text-sm uppercase tracking-[0.3em] text-primary mb-6">
-              Наши Услуги
+              Our Services
             </p>
             <h1 className="font-cormorant text-5xl md:text-6xl lg:text-7xl font-light text-foreground leading-tight">
-              Пакеты Услуг
+              Service Packages
               <br />
-              <span className="text-primary">Для Вашего Бизнеса</span>
+              <span className="text-primary">For Your Business</span>
             </h1>
           </ScrollReveal>
         </div>
@@ -83,7 +83,7 @@ const Services = () => {
                   {pkg.highlight && (
                     <div className="absolute -top-3 left-1/2 -translate-x-1/2">
                       <span className="bg-primary text-primary-foreground text-xs font-playfair uppercase tracking-[0.2em] px-4 py-1 rounded-full">
-                        Популярный
+                        Popular
                       </span>
                     </div>
                   )}
@@ -118,7 +118,7 @@ const Services = () => {
                       }`}
                       variant={pkg.highlight ? "default" : "outline"}
                     >
-                      Обсудить
+                      Get Started
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </Button>
                   </Link>
@@ -134,15 +134,15 @@ const Services = () => {
         <div className="max-w-4xl mx-auto px-6 text-center">
           <ScrollReveal>
             <h2 className="font-cormorant text-4xl md:text-5xl font-light text-foreground mb-8">
-              Нужен индивидуальный пакет?
+              Need a Custom Package?
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto mb-12 leading-relaxed">
-              Каждый клиент уникален. Свяжитесь с нами, чтобы обсудить
-              персональное решение под ваши задачи.
+              Every client is unique. Get in touch to discuss a personalised
+              solution tailored to your needs.
             </p>
             <Link to="/contact">
               <Button className="rounded-2xl px-10 py-6 text-base font-playfair tracking-wider uppercase hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
-                Связаться с нами
+                Contact Us
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </Link>
