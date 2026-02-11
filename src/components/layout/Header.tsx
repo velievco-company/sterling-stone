@@ -40,7 +40,7 @@ const Header = () => {
         </Link>
 
         {/* Desktop nav */}
-        <div className="hidden lg:flex items-center gap-10">
+        <div className="hidden lg:flex items-center gap-5">
           {navLinks.map(link => <Link key={link.path} to={link.path} className={`font-playfair text-xs tracking-[0.15em] uppercase transition-colors duration-300 relative
                 after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-full after:h-[1px]
                 after:transition-transform after:duration-300 after:origin-right after:scale-x-0
