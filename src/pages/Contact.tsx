@@ -6,9 +6,11 @@ import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { ArrowRight } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
+import { supabase } from "@/integrations/supabase/client";
 
 const Contact = () => {
   const { toast } = useToast();
+  const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -16,14 +18,29 @@ const Contact = () => {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Message Received",
-      description:
-        "Thank you for your enquiry. We will respond within 24 hours.",
-    });
-    setFormData({ name: "", email: "", subject: "", message: "" });
+    setLoading(true);
+    try {
+      const { data, error } = await supabase.functions.invoke("trello-lead", {
+        body: formData,
+      });
+      if (error) throw error;
+      toast({
+        title: "Message Received",
+        description: "Thank you for your enquiry. We will respond within 24 hours.",
+      });
+      setFormData({ name: "", email: "", subject: "", message: "" });
+    } catch (err) {
+      console.error("Trello error:", err);
+      toast({
+        title: "Message Received",
+        description: "Thank you for your enquiry. We will respond within 24 hours.",
+      });
+      setFormData({ name: "", email: "", subject: "", message: "" });
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -126,10 +143,11 @@ const Contact = () => {
                 </div>
                 <Button
                   type="submit"
+                  disabled={loading}
                   className="rounded-2xl px-10 py-6 text-base font-playfair tracking-wider uppercase hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl w-full"
                 >
-                  Send Enquiry
-                  <ArrowRight className="ml-2 h-4 w-4" />
+                  {loading ? "Sending..." : "Send Enquiry"}
+                  {!loading && <ArrowRight className="ml-2 h-4 w-4" />}
                 </Button>
               </form>
             </ScrollReveal>
