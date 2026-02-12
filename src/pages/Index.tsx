@@ -34,8 +34,6 @@ const Index = () => {
   return <>
     {/* Hero */}
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-card" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-secondary/20 via-transparent to-transparent" />
       <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
         <ScrollReveal>
           <p className="font-playfair text-sm uppercase tracking-[0.3em] text-primary mb-8">VELIEV & CO</p>
@@ -64,7 +62,7 @@ const Index = () => {
     </section>
 
     {/* Value Pillars */}
-    <section className="py-24 lg:py-32 bg-card">
+    <section className="py-24 lg:py-32">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <ScrollReveal>
           <div className="text-center mb-20">
@@ -132,7 +130,7 @@ const Index = () => {
     </section>
 
     {/* Reputation Calculator */}
-    <section className="py-24 lg:py-32 bg-card">
+    <section className="py-24 lg:py-32">
       <div className="max-w-4xl mx-auto px-6 lg:px-12">
         <ScrollReveal>
           <div className="text-center mb-16">
@@ -146,7 +144,7 @@ const Index = () => {
           <div className="space-y-8">
             {questions.map((item, qi) => (
               <ScrollReveal key={qi} delay={qi * 100}>
-                <Card className="border-border/50 bg-background/50 backdrop-blur-sm">
+                <Card className="border-border/50 bg-white/5 backdrop-blur-sm">
                   <CardContent className="p-6">
                     <p className="font-playfair text-foreground mb-4">{qi + 1}. {item.q}</p>
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
@@ -181,7 +179,7 @@ const Index = () => {
           </div>
         ) : (
           <ScrollReveal>
-            <Card className="border-primary/30 bg-background/50 backdrop-blur-sm">
+            <Card className="border-primary/30 bg-white/5 backdrop-blur-sm">
               <CardContent className="p-10 text-center">
                 <div className="text-7xl font-cormorant font-light text-primary mb-2">{getScore()}%</div>
                 {(() => {
@@ -241,7 +239,7 @@ const Index = () => {
             },
           ].map((t, i) => (
             <ScrollReveal key={i} delay={i * 150}>
-              <Card className="border-border/50 bg-card/80 backdrop-blur-sm h-full hover:border-primary/30 transition-all duration-500">
+              <Card className="border-border/50 bg-white/5 backdrop-blur-sm h-full hover:border-primary/30 transition-all duration-500">
                 <CardContent className="p-8 flex flex-col h-full">
                   <MessageSquareQuote className="h-8 w-8 text-primary/30 mb-6" />
                   <div className="flex gap-1 mb-4">
@@ -260,7 +258,7 @@ const Index = () => {
     </section>
 
     {/* Packages */}
-    <section className="py-24 lg:py-32 bg-card">
+    <section className="py-24 lg:py-32">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <ScrollReveal>
           <div className="text-center mb-20">
@@ -290,7 +288,7 @@ const Index = () => {
               <div className={`relative flex flex-col h-full rounded-3xl p-8 lg:p-10 border transition-all duration-500 hover:-translate-y-1 ${
                 pkg.highlight
                   ? "border-primary bg-primary/5 shadow-[0_8px_40px_-12px_hsl(30_39%_85%/0.25)]"
-                  : "border-border bg-card hover:border-primary/30 hover:shadow-[0_8px_40px_-12px_hsl(30_39%_85%/0.15)]"
+                  : "border-border bg-white/5 hover:border-primary/30 hover:shadow-[0_8px_40px_-12px_hsl(30_39%_85%/0.15)]"
               }`}>
                 {pkg.highlight && (
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2">
