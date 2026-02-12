@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* Brand */}
           <div>
-            <img src={logo} alt="Veliev & Co" className="h-[130px] w-auto mb-4" />
+            <img src={logo} alt="Veliev & Co" className="h-[100px] w-auto mb-4" />
             <p className="text-muted-foreground text-sm leading-relaxed max-w-xs">
               Discreet Excellence. Measurable Results. Strategic reputation
               management for discerning clients.
