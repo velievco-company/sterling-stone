@@ -259,14 +259,14 @@ const Index = () => {
 
     {/* Packages */}
     <section className="py-24 lg:py-32">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <div className="max-w-7xl mx-auto px-6 lg:px-50">
         <ScrollReveal>
           <div className="text-center mb-20">
             <p className="font-playfair text-sm uppercase tracking-[0.3em] text-primary mb-4">Reputation Management</p>
             <h2 className="font-cormorant text-4xl md:text-5xl font-light text-foreground">Our Packages</h2>
           </div>
         </ScrollReveal>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 bg-primary-foreground">
           {[
           {
             tier: "Basic", name: "Monitoring & Reviews",
