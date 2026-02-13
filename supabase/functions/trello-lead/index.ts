@@ -17,18 +17,20 @@ Deno.serve(async (req) => {
     console.log('Token length:', apiToken.length, 'first 4 chars:', apiToken.substring(0, 4));
 
     // Get the first list on the board
-    const listsRes = await fetch(
-      `https://api.trello.com/1/boards/Q1YIV2qk/lists?key=${apiKey}&token=${apiToken}`
-    );
+    const boardId = 'Q1YIV2qk';
+    const listsUrl = `https://api.trello.com/1/boards/${boardId}/lists?key=${apiKey}&token=${apiToken}`;
+    console.log('Fetching lists from board:', boardId);
+    const listsRes = await fetch(listsUrl);
+    const listsText = await listsRes.text();
+    console.log('Lists response status:', listsRes.status, 'body:', listsText);
     if (!listsRes.ok) {
-      const errText = await listsRes.text();
-      console.error('Trello lists error:', listsRes.status, errText);
-      return new Response(JSON.stringify({ error: `Trello API error: ${errText}` }), {
+      return new Response(JSON.stringify({ error: `Trello API error: ${listsText}` }), {
         status: 500,
         headers: { ...corsHeaders, 'Content-Type': 'application/json' },
       });
     }
-    const lists = await listsRes.json();
+    const lists = JSON.parse(listsText);
+    console.log('Found lists:', lists.length);
     const listId = lists[0]?.id;
 
     if (!listId) {
