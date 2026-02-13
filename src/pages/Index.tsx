@@ -258,15 +258,15 @@ const Index = () => {
     </section>
 
     {/* Packages */}
-    <section className="py-24 lg:py-32">
-      <div className="max-w-7xl mx-auto px-6 lg:px-50">
+    <section className="py-24 lg:py-32 rounded-xl opacity-90">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <ScrollReveal>
           <div className="text-center mb-20">
             <p className="font-playfair text-sm uppercase tracking-[0.3em] text-primary mb-4">Reputation Management</p>
             <h2 className="font-cormorant text-4xl md:text-5xl font-light text-foreground">Our Packages</h2>
           </div>
         </ScrollReveal>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 bg-primary-foreground">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {[
           {
             tier: "Basic", name: "Monitoring & Reviews",
@@ -326,10 +326,10 @@ const Index = () => {
       <div className="max-w-4xl mx-auto px-6 text-center">
         <ScrollReveal>
           <div className="w-16 h-[1px] bg-primary mx-auto mb-12" />
-          <h2 className="font-cormorant text-4xl md:text-5xl mb-8 text-primary-foreground font-semibold">
+          <h2 className="font-cormorant text-4xl md:text-5xl font-light text-foreground mb-8">
             Ready to Elevate Your Position?
           </h2>
-          <p className="text-lg max-w-2xl mx-auto mb-12 leading-relaxed text-primary-foreground font-normal">
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto mb-12 leading-relaxed">
             Begin a confidential conversation about how we can protect and
             enhance what matters most — your reputation.
           </p>
