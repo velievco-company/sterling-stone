@@ -18,6 +18,14 @@ Deno.serve(async (req) => {
     const listsRes = await fetch(
       `https://api.trello.com/1/boards/Q1YIV2qk/lists?key=${apiKey}&token=${apiToken}`
     );
+    if (!listsRes.ok) {
+      const errText = await listsRes.text();
+      console.error('Trello lists error:', listsRes.status, errText);
+      return new Response(JSON.stringify({ error: `Trello API error: ${errText}` }), {
+        status: 500,
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      });
+    }
     const lists = await listsRes.json();
     const listId = lists[0]?.id;
 
@@ -41,6 +49,15 @@ Deno.serve(async (req) => {
         }),
       }
     );
+
+    if (!cardRes.ok) {
+      const errText = await cardRes.text();
+      console.error('Trello card error:', cardRes.status, errText);
+      return new Response(JSON.stringify({ error: `Trello card error: ${errText}` }), {
+        status: 500,
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      });
+    }
 
     const card = await cardRes.json();
 
