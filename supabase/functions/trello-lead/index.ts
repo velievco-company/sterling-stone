@@ -11,8 +11,10 @@ Deno.serve(async (req) => {
   try {
     const { name, email, subject, message } = await req.json();
 
-    const apiKey = Deno.env.get('TRELLO_API_KEY')!;
-    const apiToken = Deno.env.get('TRELLO_API_TOKEN')!;
+    const apiKey = Deno.env.get('TRELLO_API_KEY') || '';
+    const apiToken = Deno.env.get('TRELLO_API_TOKEN') || '';
+    console.log('API Key length:', apiKey.length, 'first 4 chars:', apiKey.substring(0, 4));
+    console.log('Token length:', apiToken.length, 'first 4 chars:', apiToken.substring(0, 4));
 
     // Get the first list on the board
     const listsRes = await fetch(
