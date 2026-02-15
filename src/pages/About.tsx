@@ -8,13 +8,13 @@ const About = () => {
       <section className="pt-32 pb-20 lg:pt-40 lg:pb-28">
         <div className="max-w-5xl mx-auto px-6 text-center">
           <ScrollReveal>
-            <p className="font-playfair text-sm uppercase tracking-[0.3em] text-primary mb-6">
+            <p className="font-playfair text-sm uppercase tracking-[0.3em] text-primary mb-6 bg-primary-foreground font-semibold">
               About Us
             </p>
-            <h1 className="font-cormorant text-5xl md:text-6xl lg:text-7xl font-light text-foreground leading-tight">
+            <h1 className="font-cormorant text-5xl md:text-6xl lg:text-7xl leading-tight text-primary-foreground font-semibold">
               A Legacy of
               <br />
-              <span className="text-primary">Discreet Service</span>
+              <span className="text-primary-foreground">Discreet Service</span>
             </h1>
           </ScrollReveal>
         </div>
@@ -68,12 +68,12 @@ const About = () => {
         <div className="max-w-4xl mx-auto px-6 text-center">
           <ScrollReveal>
             <div className="w-16 h-[1px] bg-primary mx-auto mb-12" />
-            <blockquote className="font-cormorant text-3xl md:text-4xl lg:text-5xl font-light text-foreground leading-tight italic mb-8">
-              "In the realm of reputation, discretion is not merely a virtue —
-              it is the foundation upon which all trust is built."
+            <blockquote className="font-cormorant text-3xl md:text-4xl lg:text-5xl font-light leading-tight italic mb-8 text-primary-foreground bg-primary">"In the realm of reputation, discretion is not merely a virtue — it is the foundation upon which all trust is b​uilt"
+
+
             </blockquote>
-            <p className="font-playfair text-sm uppercase tracking-[0.3em] text-primary">
-              — Founding Principle
+            <p className="font-playfair text-sm uppercase tracking-[0.3em] font-medium bg-primary text-primary-foreground">KAMIL VELIEV — FOUNDING PRINCIPLE
+
             </p>
             <div className="w-16 h-[1px] bg-primary mx-auto mt-12" />
           </ScrollReveal>
@@ -95,24 +95,24 @@ const About = () => {
           </ScrollReveal>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
-              {
-                title: "Confidentiality First",
-                desc: "Every engagement is protected by strict NDA protocols. Your strategy, your data, your identity — all safeguarded with institutional-grade security.",
-              },
-              {
-                title: "Senior-Led Teams",
-                desc: "No juniors managing your account. Every client works directly with partners who have decades of combined experience in reputation and strategic communications.",
-              },
-              {
-                title: "Measurable Outcomes",
-                desc: "We set clear KPIs, track progress rigorously, and report transparently. If it can't be measured, we don't promise it.",
-              },
-              {
-                title: "Global Perspective",
-                desc: "With operations across London, Zürich, and Singapore, we understand the nuances of reputation across cultures, jurisdictions, and markets.",
-              },
-            ].map((item, i) => (
-              <ScrollReveal key={item.title} delay={i * 100}>
+            {
+              title: "Confidentiality First",
+              desc: "Every engagement is protected by strict NDA protocols. Your strategy, your data, your identity — all safeguarded with institutional-grade security."
+            },
+            {
+              title: "Senior-Led Teams",
+              desc: "No juniors managing your account. Every client works directly with partners who have decades of combined experience in reputation and strategic communications."
+            },
+            {
+              title: "Measurable Outcomes",
+              desc: "We set clear KPIs, track progress rigorously, and report transparently. If it can't be measured, we don't promise it."
+            },
+            {
+              title: "Global Perspective",
+              desc: "With operations across London, Zürich, and Singapore, we understand the nuances of reputation across cultures, jurisdictions, and markets."
+            }].
+            map((item, i) =>
+            <ScrollReveal key={item.title} delay={i * 100}>
                 <div className="bg-background rounded-3xl p-8 border border-border">
                   <h3 className="font-playfair text-lg text-foreground mb-3">
                     {item.title}
@@ -122,13 +122,13 @@ const About = () => {
                   </p>
                 </div>
               </ScrollReveal>
-            ))}
+            )}
           </div>
         </div>
       </section>
 
-    </>
-  );
+    </>);
+
 };
 
 export default About;
