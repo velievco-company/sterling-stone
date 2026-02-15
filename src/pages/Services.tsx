@@ -4,49 +4,49 @@ import { Button } from "@/components/ui/button";
 import ScrollReveal from "@/components/ScrollReveal";
 
 const packages = [
-  {
-    tier: "Basic",
-    name: "Monitoring & Reviews",
-    desc: "Essential package for online reputation control: brand mention tracking and professional review management.",
-    features: [
-      "Brand mention monitoring",
-      "Review responses (Google, Trustpilot, Yelp)",
-      "Monthly reputation report",
-      "Negative mention alerts",
-      "Basic analytics",
-    ],
-    highlight: false,
-  },
-  {
-    tier: "Professional",
-    name: "Growth & Visibility",
-    desc: "Comprehensive package: reputation management enhanced with SEO optimisation and SERM strategy to boost your search presence.",
-    features: [
-      "Everything in Basic",
-      "SEO optimisation",
-      "SERM (search reputation management)",
-      "Content marketing (2 articles/month)",
-      "Social media management",
-      "Weekly reporting",
-    ],
-    highlight: true,
-  },
-  {
-    tier: "Enterprise",
-    name: "Full Management",
-    desc: "Maximum-tier package for businesses, including PR support, extended content marketing, and strategic consulting.",
-    features: [
-      "Everything in Professional",
-      "PR & media relations",
-      "Extended content marketing (8+ pieces/month)",
-      "Paid advertising (PPC, targeting)",
-      "Strategic consulting",
-      "Crisis management 24/7",
-      "Dedicated account manager",
-    ],
-    highlight: false,
-  },
-];
+{
+  tier: "Basic",
+  name: "Monitoring & Reviews",
+  desc: "Essential package for online reputation control: brand mention tracking and professional review management.",
+  features: [
+  "Brand mention monitoring",
+  "Review responses (Google, Trustpilot, Yelp)",
+  "Monthly reputation report",
+  "Negative mention alerts",
+  "Basic analytics"],
+
+  highlight: false
+},
+{
+  tier: "Professional",
+  name: "Growth & Visibility",
+  desc: "Comprehensive package: reputation management enhanced with SEO optimisation and SERM strategy to boost your search presence.",
+  features: [
+  "Everything in Basic",
+  "SEO optimisation",
+  "SERM (search reputation management)",
+  "Content marketing (2 articles/month)",
+  "Social media management",
+  "Weekly reporting"],
+
+  highlight: true
+},
+{
+  tier: "Enterprise",
+  name: "Full Management",
+  desc: "Maximum-tier package for businesses, including PR support, extended content marketing, and strategic consulting.",
+  features: [
+  "Everything in Professional",
+  "PR & media relations",
+  "Extended content marketing (8+ pieces/month)",
+  "Paid advertising (PPC, targeting)",
+  "Strategic consulting",
+  "Crisis management 24/7",
+  "Dedicated account manager"],
+
+  highlight: false
+}];
+
 
 const Services = () => {
   return (
@@ -55,13 +55,13 @@ const Services = () => {
       <section className="pt-32 pb-20 lg:pt-40 lg:pb-28">
         <div className="max-w-5xl mx-auto px-6 text-center">
           <ScrollReveal>
-            <p className="font-playfair text-sm uppercase tracking-[0.3em] text-primary mb-6">
+            <p className="font-playfair text-sm uppercase tracking-[0.3em] text-primary mb-6 font-semibold bg-primary-foreground">
               Our Service
             </p>
-            <h1 className="font-cormorant text-5xl md:text-6xl lg:text-7xl font-light text-foreground leading-tight">
+            <h1 className="font-cormorant text-5xl md:text-6xl lg:text-7xl leading-tight font-medium text-primary-foreground">
               Service Packages
               <br />
-              <span className="text-primary">For Your Business</span>
+              <span className="text-primary-foreground">For Your Business</span>
             </h1>
           </ScrollReveal>
         </div>
@@ -71,22 +71,22 @@ const Services = () => {
       <section className="pb-24 lg:pb-32">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {packages.map((pkg, i) => (
-              <ScrollReveal key={pkg.tier} delay={i * 150}>
+            {packages.map((pkg, i) =>
+            <ScrollReveal key={pkg.tier} delay={i * 150}>
                 <div
-                  className={`relative flex flex-col h-full rounded-3xl p-8 lg:p-10 border transition-all duration-500 hover:-translate-y-1 ${
-                    pkg.highlight
-                      ? "border-primary bg-primary/5 shadow-[0_8px_40px_-12px_hsl(30_39%_85%/0.25)]"
-                      : "border-border bg-card hover:border-primary/30 hover:shadow-[0_8px_40px_-12px_hsl(30_39%_85%/0.15)]"
-                  }`}
-                >
-                  {pkg.highlight && (
-                    <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                className={`relative flex flex-col h-full rounded-3xl p-8 lg:p-10 border transition-all duration-500 hover:-translate-y-1 ${
+                pkg.highlight ?
+                "border-primary bg-primary/5 shadow-[0_8px_40px_-12px_hsl(30_39%_85%/0.25)]" :
+                "border-border bg-card hover:border-primary/30 hover:shadow-[0_8px_40px_-12px_hsl(30_39%_85%/0.15)]"}`
+                }>
+
+                  {pkg.highlight &&
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2">
                       <span className="bg-primary text-primary-foreground text-xs font-playfair uppercase tracking-[0.2em] px-4 py-1 rounded-full">
                         Popular
                       </span>
                     </div>
-                  )}
+                }
 
                   <p className="font-playfair text-xs uppercase tracking-[0.3em] text-primary mb-3">
                     {pkg.tier}
@@ -99,32 +99,32 @@ const Services = () => {
                   </p>
 
                   <div className="space-y-3 mb-10 flex-grow">
-                    {pkg.features.map((f) => (
-                      <div key={f} className="flex items-start gap-3">
+                    {pkg.features.map((f) =>
+                  <div key={f} className="flex items-start gap-3">
                         <Check className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
                         <span className="text-sm text-muted-foreground">
                           {f}
                         </span>
                       </div>
-                    ))}
+                  )}
                   </div>
 
                   <Link to="/contact" className="mt-auto">
                     <Button
-                      className={`w-full rounded-2xl py-5 font-playfair tracking-wider uppercase transition-all duration-300 ${
-                        pkg.highlight
-                          ? "hover:scale-105 shadow-lg hover:shadow-xl"
-                          : ""
-                      }`}
-                      variant={pkg.highlight ? "default" : "outline"}
-                    >
+                    className={`w-full rounded-2xl py-5 font-playfair tracking-wider uppercase transition-all duration-300 ${
+                    pkg.highlight ?
+                    "hover:scale-105 shadow-lg hover:shadow-xl" :
+                    ""}`
+                    }
+                    variant={pkg.highlight ? "default" : "outline"}>
+
                       Get Started
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </Button>
                   </Link>
                 </div>
               </ScrollReveal>
-            ))}
+            )}
           </div>
         </div>
       </section>
@@ -149,8 +149,8 @@ const Services = () => {
           </ScrollReveal>
         </div>
       </section>
-    </>
-  );
+    </>);
+
 };
 
 export default Services;
