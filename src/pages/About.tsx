@@ -34,7 +34,7 @@ const About = () => {
                 </h2>
                 <div className="space-y-6 text-muted-foreground leading-relaxed">
                   <p>
-                    Ashworth & Sterling was established in 2015 by a team of
+                    Veliev & Co was established in 2015 by a team of
                     former strategic advisors from the worlds of private banking,
                     law, and corporate communications. Recognising a gap in the
                     market for truly discreet, results-oriented reputation

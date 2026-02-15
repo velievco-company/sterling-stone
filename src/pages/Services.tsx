@@ -56,7 +56,7 @@ const Services = () => {
         <div className="max-w-5xl mx-auto px-6 text-center">
           <ScrollReveal>
             <p className="font-playfair text-sm uppercase tracking-[0.3em] text-primary mb-6">
-              Our Services
+              Our Service
             </p>
             <h1 className="font-cormorant text-5xl md:text-6xl lg:text-7xl font-light text-foreground leading-tight">
               Service Packages

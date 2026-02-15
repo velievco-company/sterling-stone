@@ -4,14 +4,14 @@ const privacySections = [
   {
     title: "1. Introduction",
     paragraphs: [
-      'Ashworth & Sterling ("we", "our", "us") is committed to protecting the privacy and personal data of our clients, website visitors, and third parties whose data we may process in the course of our reputation management services.',
+      'Veliev & Co ("we", "our", "us") is committed to protecting the privacy and personal data of our clients, website visitors, and third parties whose data we may process in the course of our reputation management services.',
       "This Privacy Policy explains how we collect, use, store, and protect personal data in accordance with the UK General Data Protection Regulation (UK GDPR), the Data Protection Act 2018, and other applicable data protection legislation.",
     ],
   },
   {
     title: "2. Data Controller",
     paragraphs: [
-      "Ashworth & Sterling acts as a Data Controller in respect of the personal data we collect directly from our clients and website visitors. In the course of providing reputation management services, we may also act as a Data Processor on behalf of our clients.",
+      "Veliev & Co acts as a Data Controller in respect of the personal data we collect directly from our clients and website visitors. In the course of providing reputation management services, we may also act as a Data Processor on behalf of our clients.",
     ],
   },
   {
@@ -65,7 +65,7 @@ const privacySections = [
     title: "10. Your Rights",
     paragraphs: [
       "Under applicable data protection legislation, you have the right to: access your personal data, rectify inaccurate data, request erasure of your data (right to be forgotten), restrict processing of your data, object to processing, data portability, and lodge a complaint with the Information Commissioner's Office (ICO).",
-      "To exercise any of these rights, please contact us at privacy@ashworthsterling.com. We will respond to all valid requests within one calendar month.",
+      "To exercise any of these rights, please contact us at contact@velievco.com. We will respond to all valid requests within one calendar month.",
     ],
   },
   {
@@ -83,7 +83,7 @@ const privacySections = [
   {
     title: "13. Contact Information",
     paragraphs: [
-      "For any questions regarding this Privacy Policy or our data protection practices, please contact our Data Protection Officer at privacy@ashworthsterling.com or write to: Data Protection Officer, Ashworth & Sterling, One Mayfair Place, London W1K 4AH, United Kingdom.",
+      "For any questions regarding this Privacy Policy or our data protection practices, please contact us at contact@velievco.com.",
     ],
   },
 ];
@@ -95,7 +95,7 @@ const Privacy = () => {
       <section className="pt-32 pb-20 lg:pt-40 lg:pb-28">
         <div className="max-w-5xl mx-auto px-6 text-center">
           <ScrollReveal>
-            <p className="font-playfair text-sm uppercase tracking-[0.3em] text-primary mb-6">
+            <p className="font-playfair text-sm uppercase tracking-[0.3em] text-brown mb-6">
               Legal
             </p>
             <h1 className="font-cormorant text-5xl md:text-6xl font-light text-foreground">
@@ -115,10 +115,10 @@ const Privacy = () => {
             {privacySections.map((section, i) => (
               <ScrollReveal key={section.title} delay={i * 50}>
                 <div>
-                  <h2 className="font-playfair text-xl text-foreground mb-4">
+                  <h2 className="font-playfair text-xl text-brown mb-4">
                     {section.title}
                   </h2>
-                  <div className="text-muted-foreground text-sm leading-relaxed space-y-4">
+                  <div className="text-[hsl(209,60%,11%)] text-sm leading-relaxed space-y-4">
                     {section.paragraphs.map((p, j) => (
                       <p key={j}>{p}</p>
                     ))}
