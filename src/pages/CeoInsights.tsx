@@ -51,15 +51,15 @@ const CeoInsights = () => {
       <section className="pt-32 pb-20 lg:pt-40 lg:pb-28">
         <div className="max-w-5xl mx-auto px-6 text-center">
           <ScrollReveal>
-            <p className="font-playfair text-sm uppercase tracking-[0.3em] text-primary mb-6">
+            <p className="font-playfair text-sm uppercase tracking-[0.3em] text-primary mb-6 font-semibold bg-primary-foreground">
               CEO Insights
             </p>
-            <h1 className="font-cormorant text-5xl md:text-6xl lg:text-7xl font-light text-foreground leading-tight">
+            <h1 className="font-cormorant text-5xl md:text-6xl lg:text-7xl leading-tight font-semibold text-primary-foreground">
               Thought
               <br />
-              <span className="text-primary">Leadership</span>
+              <span className="text-primary-foreground">Leadership</span>
             </h1>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto mt-8 leading-relaxed">
+            <p className="text-lg max-w-2xl mx-auto mt-8 leading-relaxed text-muted">
               Perspectives on reputation, strategy, and the evolving landscape
               of digital presence from our CEO, Camile Veliev.
             </p>
