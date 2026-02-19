@@ -49,13 +49,13 @@ const Contact = () => {
       <section className="pt-32 pb-20 lg:pt-40 lg:pb-28">
         <div className="max-w-5xl mx-auto px-6 text-center">
           <ScrollReveal>
-            <p className="font-playfair text-sm uppercase tracking-[0.3em] text-primary mb-6 bg-primary-foreground">
+            <p className="font-playfair text-sm uppercase tracking-[0.3em] mb-6 bg-primary-foreground" style={{color: '#0b1d2d'}}>
               Contact
             </p>
-            <h1 className="font-cormorant text-5xl md:text-6xl lg:text-7xl leading-tight text-primary-foreground font-semibold">
+            <h1 className="font-cormorant text-5xl md:text-6xl lg:text-7xl leading-tight font-semibold" style={{color: '#0b1d2d'}}>
               Begin the
               <br />
-              <span className="text-primary-foreground">Conversation</span>
+              <span style={{color: '#0b1d2d'}}>Conversation</span>
             </h1>
           </ScrollReveal>
         </div>
