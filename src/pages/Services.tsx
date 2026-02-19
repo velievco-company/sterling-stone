@@ -1,6 +1,11 @@
-import { ArrowRight, Check } from "lucide-react";
+import { ArrowRight, Check, X } from "lucide-react";
+import { useState } from "react";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { supabase } from "@/integrations/supabase/client";
+import { useToast } from "@/hooks/use-toast";
 import ScrollReveal from "@/components/ScrollReveal";
 
 const packages = [
@@ -48,7 +53,86 @@ const packages = [
 }];
 
 
+const ContactModal = ({ pkg, onClose }: { pkg: string; onClose: () => void }) => {
+  const { toast } = useToast();
+  const [loading, setLoading] = useState(false);
+  const [form, setForm] = useState({ name: "", email: "", message: "" });
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    try {
+      await supabase.functions.invoke("trello-lead", {
+        body: { ...form, subject: `Service Enquiry: ${pkg}` }
+      });
+    } catch {}
+    toast({ title: "Message Received", description: "We will respond within 24 hours." });
+    setLoading(false);
+    onClose();
+  };
+
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center px-4" onClick={onClose}>
+      <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" />
+      <div
+        className="relative w-full max-w-md rounded-3xl border border-white/10 p-8 shadow-2xl"
+        style={{backgroundColor: 'rgba(11, 29, 45, 0.97)'}}
+        onClick={(e) => e.stopPropagation()}
+      >
+        <button onClick={onClose} className="absolute top-5 right-5 text-white/40 hover:text-white transition-colors">
+          <X className="h-5 w-5" />
+        </button>
+        <p className="font-playfair text-xs uppercase tracking-[0.3em] text-primary mb-2">Get Started</p>
+        <h3 className="font-cormorant text-2xl text-white font-light mb-1">{pkg}</h3>
+        <p className="text-white/50 text-sm mb-8">Fill in your details and we'll be in touch within 24 hours.</p>
+        <form onSubmit={handleSubmit} className="space-y-5">
+          <div>
+            <Label className="font-playfair text-xs uppercase tracking-[0.2em] text-white/60 mb-2 block">Full Name</Label>
+            <Input
+              value={form.name}
+              onChange={(e) => setForm({...form, name: e.target.value})}
+              className="bg-white/5 border-white/10 rounded-xl text-white placeholder:text-white/30 focus:border-primary"
+              placeholder="Your name"
+              required
+            />
+          </div>
+          <div>
+            <Label className="font-playfair text-xs uppercase tracking-[0.2em] text-white/60 mb-2 block">Email Address</Label>
+            <Input
+              type="email"
+              value={form.email}
+              onChange={(e) => setForm({...form, email: e.target.value})}
+              className="bg-white/5 border-white/10 rounded-xl text-white placeholder:text-white/30 focus:border-primary"
+              placeholder="your@email.com"
+              required
+            />
+          </div>
+          <div>
+            <Label className="font-playfair text-xs uppercase tracking-[0.2em] text-white/60 mb-2 block">Message (optional)</Label>
+            <Input
+              value={form.message}
+              onChange={(e) => setForm({...form, message: e.target.value})}
+              className="bg-white/5 border-white/10 rounded-xl text-white placeholder:text-white/30 focus:border-primary"
+              placeholder="Tell us about your situation..."
+            />
+          </div>
+          <Button
+            type="submit"
+            disabled={loading}
+            className="w-full rounded-2xl py-5 font-playfair tracking-wider uppercase hover:scale-105 transition-all duration-300 shadow-lg mt-2"
+          >
+            {loading ? "Sending..." : "Send Enquiry"}
+            {!loading && <ArrowRight className="ml-2 h-4 w-4" />}
+          </Button>
+        </form>
+      </div>
+    </div>
+  );
+};
+
 const Services = () => {
+  const [modalPkg, setModalPkg] = useState<string | null>(null);
+
   return (
     <>
       {/* Hero */}
@@ -150,6 +234,7 @@ const Services = () => {
           </ScrollReveal>
         </div>
       </section>
+        {modalPkg && <ContactModal pkg={modalPkg} onClose={() => setModalPkg(null)} />}
     </>);
 
 };
