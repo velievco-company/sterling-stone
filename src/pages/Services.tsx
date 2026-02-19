@@ -76,9 +76,10 @@ const Services = () => {
                 <div
                 className={`relative flex flex-col h-full rounded-3xl p-8 lg:p-10 border transition-all duration-500 hover:-translate-y-1 ${
                 pkg.highlight ?
-                "border-primary bg-primary/5 shadow-[0_8px_40px_-12px_hsl(30_39%_85%/0.25)]" :
-                "border-border bg-card hover:border-primary/30 hover:shadow-[0_8px_40px_-12px_hsl(30_39%_85%/0.15)]"}`
-                }>
+                "border-primary/40 shadow-[0_8px_40px_-12px_rgba(11,29,45,0.4)]" :
+                "border-white/10 hover:border-white/20 hover:shadow-[0_8px_40px_-12px_rgba(11,29,45,0.3)]"}`
+                }
+                style={{backgroundColor: 'rgba(11, 29, 45, 0.85)'}}>
 
                   {pkg.highlight &&
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2">
@@ -91,10 +92,10 @@ const Services = () => {
                   <p className="font-playfair text-xs uppercase tracking-[0.3em] text-primary mb-3">
                     {pkg.tier}
                   </p>
-                  <h2 className="font-cormorant text-2xl lg:text-3xl font-light text-foreground mb-4">
+                  <h2 className="font-cormorant text-2xl lg:text-3xl font-light text-white mb-4">
                     {pkg.name}
                   </h2>
-                  <p className="text-muted-foreground text-sm leading-relaxed mb-8">
+                  <p className="text-white/70 text-sm leading-relaxed mb-8">
                     {pkg.desc}
                   </p>
 
@@ -102,7 +103,7 @@ const Services = () => {
                     {pkg.features.map((f) =>
                   <div key={f} className="flex items-start gap-3">
                         <Check className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
-                        <span className="text-sm text-muted-foreground">
+                        <span className="text-sm text-white/70">
                           {f}
                         </span>
                       </div>
