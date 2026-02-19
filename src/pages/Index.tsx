@@ -1,27 +1,9 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Shield, Target, ArrowRight, Award, CheckCircle, Star, MessageSquareQuote, Search, BarChart3, Megaphone, Users, ChevronDown } from "lucide-react";
+import { Shield, Target, ArrowRight, Award, CheckCircle, Star, MessageSquareQuote, Search, BarChart3, Megaphone, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import ScrollReveal from "@/components/ScrollReveal";
-
-const FaqItem = ({ question, answer }: { question: string; answer: string }) => {
-  const [open, setOpen] = useState(false);
-  return (
-    <div className="border border-white/10 rounded-2xl overflow-hidden transition-all duration-300 hover:border-primary/30" style={{backgroundColor: 'rgba(11, 29, 45, 0.85)'}}>
-      <button
-        onClick={() => setOpen(!open)}
-        className="w-full flex items-center justify-between p-6 text-left gap-4"
-      >
-        <span className="font-playfair text-white text-base">{question}</span>
-        <ChevronDown className={`h-4 w-4 text-primary flex-shrink-0 transition-transform duration-300 ${open ? "rotate-180" : ""}`} />
-      </button>
-      <div className={`overflow-hidden transition-all duration-300 ${open ? "max-h-[600px] opacity-100" : "max-h-0 opacity-0"}`}>
-        <p className="px-6 pb-6 text-white/70 text-sm leading-relaxed">{answer}</p>
-      </div>
-    </div>
-  );
-};
 
 const Index = () => {
   // Reputation calculator state
@@ -97,7 +79,7 @@ const Index = () => {
           }, {
             icon: Target,
             title: "Precision Strategy",
-            desc: "Data-driven approaches refined over years of experience. We don't guess — we engineer outcomes with surgical accuracy."
+            desc: "Data-driven approaches refined over years of experience. We don't guess вЂ” we engineer outcomes with surgical accuracy."
           }, {
             icon: Award,
             title: "Proven Excellence",
@@ -121,7 +103,7 @@ const Index = () => {
           }, {
             icon: Target,
             title: "Precision Strategy",
-            desc: "Data-driven approaches refined over years of experience. We don't guess — we engineer outcomes with surgical accuracy."
+            desc: "Data-driven approaches refined over years of experience. We don't guess вЂ” we engineer outcomes with surgical accuracy."
           }, {
             icon: Award,
             title: "Proven Excellence",
@@ -146,7 +128,7 @@ const Index = () => {
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <ScrollReveal>
           <div className="text-center mb-20">
-            <p className="font-playfair text-sm uppercase tracking-[0.3em] text-primary mb-4 font-medium bg-primary-foreground">OUR PROCESS</p>
+            <p className="font-playfair text-sm uppercase tracking-[0.3em] text-primary mb-4 font-medium bg-primary-foreground">OURВ PROCESS</p>
             <h2 className="font-cormorant text-4xl md:text-5xl text-primary-foreground font-medium">How We Work</h2>
           </div>
         </ScrollReveal>
@@ -154,7 +136,7 @@ const Index = () => {
         <div className="flex md:hidden gap-5 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide -mx-6 px-6">
           {[
           { icon: Search, step: "01", title: "Audit", desc: "Deep analysis of your current online presence, reviews, search results, and digital footprint." },
-          { icon: BarChart3, step: "02", title: "Strategy", desc: "Custom roadmap tailored to your goals — reputation repair, growth, or proactive protection." },
+          { icon: BarChart3, step: "02", title: "Strategy", desc: "Custom roadmap tailored to your goals вЂ” reputation repair, growth, or proactive protection." },
           { icon: Megaphone, step: "03", title: "Execution", desc: "Implementation of SEO, content, PR, review management, and paid campaigns." },
           { icon: Users, step: "04", title: "Results", desc: "Transparent reporting with measurable KPIs. Continuous optimization for sustained growth." }].
           map((item, i) =>
@@ -172,7 +154,7 @@ const Index = () => {
         <div className="hidden md:grid md:grid-cols-4 gap-8">
           {[
           { icon: Search, step: "01", title: "Audit", desc: "Deep analysis of your current online presence, reviews, search results, and digital footprint." },
-          { icon: BarChart3, step: "02", title: "Strategy", desc: "Custom roadmap tailored to your goals — reputation repair, growth, or proactive protection." },
+          { icon: BarChart3, step: "02", title: "Strategy", desc: "Custom roadmap tailored to your goals вЂ” reputation repair, growth, or proactive protection." },
           { icon: Megaphone, step: "03", title: "Execution", desc: "Implementation of SEO, content, PR, review management, and paid campaigns." },
           { icon: Users, step: "04", title: "Results", desc: "Transparent reporting with measurable KPIs. Continuous optimization for sustained growth." }].
           map((item, i) =>
@@ -310,7 +292,7 @@ const Index = () => {
                   )}
                   </div>
                   <p className="text-muted-foreground leading-relaxed mb-6 flex-grow italic">"{t.quote}"</p>
-                  <p className="font-playfair text-sm text-foreground/70">— {t.role}</p>
+                  <p className="font-playfair text-sm text-foreground/70">вЂ” {t.role}</p>
                 </CardContent>
               </Card>
             </ScrollReveal>
@@ -426,85 +408,6 @@ const Index = () => {
       </div>
     </section>
 
-    {/* Stats */}
-    <section className="py-24 lg:py-32 bg-card">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
-        <ScrollReveal>
-          <div className="text-center mb-16">
-            <p className="font-playfair text-sm uppercase tracking-[0.3em] text-primary mb-4">By The Numbers</p>
-            <h2 className="font-cormorant text-4xl md:text-5xl text-primary-foreground font-medium">Results That Speak</h2>
-          </div>
-        </ScrollReveal>
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
-          {[
-            { value: "4", label: "Continents", sub: "Australia, Europe,\nUSA & UAE" },
-            { value: "3–12", label: "Weeks", sub: "Visible Results" },
-            { value: "12+", label: "Months", sub: "Long-Term Programs" },
-            { value: "15×", label: "ROI", sub: "Achieved for Clients" },
-            { value: "+40%", label: "Reputation Growth", sub: "Online Presence" },
-          ].map((stat, i) =>
-          <ScrollReveal key={stat.label} delay={i * 100}>
-            <div className="border border-white/10 rounded-2xl p-6 text-center hover:border-primary/30 transition-all duration-300" style={{backgroundColor: "rgba(11, 29, 45, 0.85)"}}>
-              <div className="font-cormorant text-4xl md:text-5xl font-light text-primary mb-2">{stat.value}</div>
-              <div className="font-playfair text-xs uppercase tracking-[0.2em] text-white mb-2">{stat.label}</div>
-              <div className="text-white/60 text-xs leading-relaxed whitespace-pre-line">{stat.sub}</div>
-            </div>
-          </ScrollReveal>
-          )}
-        </div>
-      </div>
-    </section>
-
-    {/* FAQ */}
-    <section className="py-24 lg:py-32">
-      <div className="max-w-4xl mx-auto px-6 lg:px-12">
-        <ScrollReveal>
-          <div className="text-center mb-16">
-            <p className="font-playfair text-sm uppercase tracking-[0.3em] text-primary mb-4 bg-primary-foreground">Common Questions</p>
-            <h2 className="font-cormorant text-4xl md:text-5xl text-primary-foreground font-medium">Everything You Need to Know</h2>
-          </div>
-        </ScrollReveal>
-        <div className="space-y-4">
-          {[
-            {
-              q: "What results can I expect, and how soon?",
-              a: "Within the first 30 days, you'll see measurable movement in search results — positive and neutral content about your firm begins appearing and pushing down unwanted material. By the end of month three, most of our clients in law, real estate, and hospitality see negative content pushed off the first two pages of Google for their primary branded searches. We don't make promises before we understand your situation — that's why we start with a free 24-hour audit that gives you a clear picture of where you stand and what's realistically achievable in your specific case."
-            },
-            {
-              q: "How do you do this — and is it all above board?",
-              a: "Everything we do is fully compliant and transparent. We build and promote high-quality content across authoritative platforms, work with review sites through their official dispute processes, and strengthen your brand's presence where your clients are actually looking — Google, Avvo, Trustpilot, Yelp, TripAdvisor, and others depending on your industry. We don't use bots, fake reviews, or any tactics that could backfire and create legal or reputational exposure for you. Every action we take we can show you and explain in plain English."
-            },
-            {
-              q: "How much does this cost and why?",
-              a: "Our starting engagement is $1,500 per month with a recommended minimum of three months to see meaningful results. For law firms, real estate brokerages, and hotels — where a single lost client or a dropped rating on Google can mean tens of thousands of dollars — this is one of the highest-ROI investments you can make in your business. What you're getting is a dedicated team: a strategist, content specialists, an SEO professional, and a platform relations manager. Cheaper services almost always mean one person doing everything manually, or grey-hat tactics that create more risk than they solve."
-            },
-            {
-              q: "What if I'm not satisfied — do I get my money back?",
-              a: "Yes, straightforwardly. We don't lock you into annual contracts. You pay month to month, and if at any point you feel the work isn't delivering — we stop, and we refund any unused months immediately, no negotiations, no conditions. We structure it this way because we believe the results should speak for themselves. A reputation management firm that won't stand behind its work shouldn't be managing anyone's reputation."
-            },
-            {
-              q: "How will you keep me informed along the way?",
-              a: "Every two weeks you receive a progress report — what's been published, where it's ranking, and how your search landscape is shifting across your key branded queries. At the end of each month you receive a comprehensive report with a full breakdown of results, followed by a detailed discussion with our CEO on strategy for the coming period. Every client has a personal direct line to our CEO, available at any time, any day of the week. We don't hide behind account managers and support tickets. If you need an answer or a decision right now, you'll get one — all through messaging, on your schedule, with no mandatory calls required."
-            },
-            {
-              q: "Have you worked with businesses like mine before?",
-              a: "Yes — law firms, real estate agencies, boutique hotels, and fintech companies make up the core of our client base. Each of these industries has its own specific platforms, compliance sensitivities, and audience expectations that require a tailored approach from day one. When we connect, we'll walk you through case studies relevant to your industry and your specific situation — not vanity metrics, but real before-and-after examples of search landscapes we've changed for businesses like yours. If we haven't worked in your specific niche, we'll tell you that upfront."
-            },
-            {
-              q: "Can negative reviews actually be removed, or just pushed down?",
-              a: "Both are possible — but under different conditions. Removal is achievable when a review violates the platform's terms of service: defamatory content, reviews posted by competitors, fake accounts, or content touching on confidential matters. In those cases we file formal disputes through official platform channels and follow through until we get a resolution. If a review is negative but doesn't violate any platform policies, removal isn't realistic — and anyone who promises otherwise for a fee is creating additional risk for you. In those situations we focus on strategic suppression: building enough authoritative positive content that the negative material moves to page three or four, where the vast majority of people will never see it."
-            },
-            {
-              q: "What happens after the engagement ends — will the results last?",
-              a: "The content and rankings we build don't disappear overnight — quality content placed on authoritative domains holds its position for a long time. That said, reputation is not a one-time fix, it's an ongoing asset that requires attention. For most of our clients in high-trust industries like law, hospitality, and real estate, we recommend a lighter ongoing maintenance package after the initial engagement to monitor new mentions, respond to fresh reviews, and protect what we've built together. We'll give you an honest assessment of what your situation actually requires — some clients are in great shape after three months, others benefit from continued support on a longer-term basis."
-            },
-          ].map((item, i) => (
-            <FaqItem key={i} question={item.q} answer={item.a} />
-          ))}
-        </div>
-      </div>
-    </section>
-
     {/* Final CTA */}
     <section className="py-24 lg:py-32">
       <div className="max-w-4xl mx-auto px-6 text-center">
@@ -515,7 +418,7 @@ const Index = () => {
           </h2>
           <p className="text-lg max-w-2xl mx-auto mb-12 leading-relaxed font-normal text-primary-foreground">
             Begin a confidential conversation about how we can protect and
-            enhance what matters most — your reputation.
+            enhance what matters most вЂ” your reputation.
           </p>
           <Link to="/contact">
             <Button className="rounded-2xl px-10 py-6 text-base font-playfair tracking-wider uppercase hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
