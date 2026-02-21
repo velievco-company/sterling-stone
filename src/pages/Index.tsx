@@ -4,6 +4,7 @@ import { Shield, Target, ArrowRight, Award, CheckCircle, Star, MessageSquareQuot
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import ScrollReveal from "@/components/ScrollReveal";
+import SEO from "@/components/SEO";
 
 const darkCard = { backgroundColor: "rgba(11, 29, 45, 0.85)" };
 
@@ -50,13 +51,13 @@ const Index = () => {
 
   const pillars = [
     { icon: Shield, title: "Absolute Discretion", desc: "Your reputation is handled with the confidentiality and care it deserves. Every strategy is tailored, every detail protected." },
-    { icon: Target, title: "Precision Strategy", desc: "Data-driven approaches refined over years of experience. We don't guess — we engineer outcomes with surgical accuracy." },
+    { icon: Target, title: "Precision Strategy", desc: "Data-driven approaches refined over years of experience. We don't guess вЂ” we engineer outcomes with surgical accuracy." },
     { icon: Award, title: "Proven Excellence", desc: "A track record of transformative results for clients who accept nothing less than exceptional performance." },
   ];
 
   const steps = [
     { icon: Search, step: "01", title: "Audit", desc: "Deep analysis of your current online presence, reviews, search results, and digital footprint." },
-    { icon: BarChart3, step: "02", title: "Strategy", desc: "Custom roadmap tailored to your goals — reputation repair, growth, or proactive protection." },
+    { icon: BarChart3, step: "02", title: "Strategy", desc: "Custom roadmap tailored to your goals вЂ” reputation repair, growth, or proactive protection." },
     { icon: Megaphone, step: "03", title: "Execution", desc: "Implementation of SEO, content, PR, review management, and paid campaigns." },
     { icon: Users, step: "04", title: "Results", desc: "Transparent reporting with measurable KPIs. Continuous optimization for sustained growth." },
   ];
@@ -82,14 +83,14 @@ const Index = () => {
   ];
 
   const faqs = [
-    { q: "What results can I expect, and how soon?", a: "Within the first 30 days, you will see measurable movement in search results — positive and neutral content about your firm begins appearing and pushing down unwanted material. By the end of month three, most of our clients in law, real estate, and hospitality see negative content pushed off the first two pages of Google. We start with a free 24-hour audit that gives you a clear picture of what is realistically achievable." },
-    { q: "How do you do this — and is it all above board?", a: "Everything we do is fully compliant and transparent. We build and promote high-quality content across authoritative platforms, work with review sites through their official dispute processes, and strengthen your brand's presence on Google, Avvo, Trustpilot, Yelp, TripAdvisor, and others. We do not use bots, fake reviews, or any tactics that could backfire." },
+    { q: "What results can I expect, and how soon?", a: "Within the first 30 days, you will see measurable movement in search results вЂ” positive and neutral content about your firm begins appearing and pushing down unwanted material. By the end of month three, most of our clients in law, real estate, and hospitality see negative content pushed off the first two pages of Google. We start with a free 24-hour audit that gives you a clear picture of what is realistically achievable." },
+    { q: "How do you do this вЂ” and is it all above board?", a: "Everything we do is fully compliant and transparent. We build and promote high-quality content across authoritative platforms, work with review sites through their official dispute processes, and strengthen your brand's presence on Google, Avvo, Trustpilot, Yelp, TripAdvisor, and others. We do not use bots, fake reviews, or any tactics that could backfire." },
     { q: "How much does this cost and why?", a: "Our starting engagement is $1,500 per month with a recommended minimum of three months. You get a dedicated team: a strategist, content specialists, an SEO professional, and a platform relations manager. Cheaper services almost always mean grey-hat tactics that create more risk than they solve." },
-    { q: "What if I am not satisfied — do I get my money back?", a: "Yes, straightforwardly. We do not lock you into annual contracts. You pay month to month, and if at any point you feel the work is not delivering — we stop, and we refund any unused months immediately, no negotiations, no conditions." },
-    { q: "How will you keep me informed along the way?", a: "Every two weeks you receive a progress report. At the end of each month a comprehensive report followed by a strategic discussion with our CEO. Every client has a personal direct line to our CEO, available any time, any day — through messaging, on your schedule, no mandatory calls required." },
-    { q: "Have you worked with businesses like mine before?", a: "Yes — law firms, real estate agencies, boutique hotels, and fintech companies make up the core of our client base. We will walk you through relevant case studies with real before-and-after examples. If we have not worked in your specific niche, we will tell you upfront." },
-    { q: "Can negative reviews actually be removed, or just pushed down?", a: "Both are possible under different conditions. Removal is achievable when a review violates platform terms of service: defamatory content, competitor reviews, fake accounts. If it does not violate policies, we focus on strategic suppression — pushing the negative material to page three or four where most people will never see it." },
-    { q: "What happens after the engagement ends — will the results last?", a: "Quality content placed on authoritative domains holds its position for a long time. For most clients in law, hospitality, and real estate, we recommend a lighter maintenance package after the initial engagement to monitor new mentions, respond to fresh reviews, and protect what we have built." },
+    { q: "What if I am not satisfied вЂ” do I get my money back?", a: "Yes, straightforwardly. We do not lock you into annual contracts. You pay month to month, and if at any point you feel the work is not delivering вЂ” we stop, and we refund any unused months immediately, no negotiations, no conditions." },
+    { q: "How will you keep me informed along the way?", a: "Every two weeks you receive a progress report. At the end of each month a comprehensive report followed by a strategic discussion with our CEO. Every client has a personal direct line to our CEO, available any time, any day вЂ” through messaging, on your schedule, no mandatory calls required." },
+    { q: "Have you worked with businesses like mine before?", a: "Yes вЂ” law firms, real estate agencies, boutique hotels, and fintech companies make up the core of our client base. We will walk you through relevant case studies with real before-and-after examples. If we have not worked in your specific niche, we will tell you upfront." },
+    { q: "Can negative reviews actually be removed, or just pushed down?", a: "Both are possible under different conditions. Removal is achievable when a review violates platform terms of service: defamatory content, competitor reviews, fake accounts. If it does not violate policies, we focus on strategic suppression вЂ” pushing the negative material to page three or four where most people will never see it." },
+    { q: "What happens after the engagement ends вЂ” will the results last?", a: "Quality content placed on authoritative domains holds its position for a long time. For most clients in law, hospitality, and real estate, we recommend a lighter maintenance package after the initial engagement to monitor new mentions, respond to fresh reviews, and protect what we have built." },
   ];
 
   return (
@@ -207,7 +208,7 @@ const Index = () => {
                 <div>
                   <p className="font-playfair text-xs uppercase tracking-[0.3em] text-primary mb-1">Free Assessment</p>
                   <h2 className="font-cormorant text-2xl md:text-3xl text-white font-medium">Reputation Health Check</h2>
-                  <p className="text-white/50 text-sm mt-1">5 quick questions — instant result</p>
+                  <p className="text-white/50 text-sm mt-1">5 quick questions вЂ” instant result</p>
                 </div>
                 <ChevronDown className={`h-5 w-5 text-primary flex-shrink-0 transition-transform duration-300 ${calcOpen ? "rotate-180" : ""}`} />
               </button>
@@ -293,7 +294,7 @@ const Index = () => {
                   ))}
                 </div>
                 <p className="text-white/70 leading-relaxed mb-4 flex-grow italic text-sm">&ldquo;{t.quote}&rdquo;</p>
-                <p className="font-playfair text-xs text-white/40">— {t.role}</p>
+                <p className="font-playfair text-xs text-white/40">вЂ” {t.role}</p>
               </div>
             ))}
           </div>
@@ -309,7 +310,7 @@ const Index = () => {
                       ))}
                     </div>
                     <p className="text-muted-foreground leading-relaxed mb-6 flex-grow italic">&ldquo;{t.quote}&rdquo;</p>
-                    <p className="font-playfair text-sm text-foreground/70">— {t.role}</p>
+                    <p className="font-playfair text-sm text-foreground/70">вЂ” {t.role}</p>
                   </CardContent>
                 </Card>
               </ScrollReveal>
@@ -329,7 +330,7 @@ const Index = () => {
           </ScrollReveal>
           <div className="flex md:hidden gap-5 overflow-x-auto pb-4 snap-x snap-mandatory -mx-6 px-6" style={{ scrollbarWidth: "none" }}>
             {packages.map((pkg) => (
-              <div key={pkg.tier} className={`relative flex flex-col rounded-3xl p-8 border flex-shrink-0 w-[82vw] snap-start ${pkg.highlight ? "border-primary/40" : "border-white/10"}`} style={darkCard}>
+              <div key={pkg.tier} className={`relative flex flex-col rounded-3xl p-8 border flex-shrink-0 w-[82vw] snap-start ${pkg.highlight ? "border-primary/40 pt-10" : "border-white/10"}`} style={darkCard}>
                 {pkg.highlight && (
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2">
                     <span className="bg-primary text-primary-foreground text-xs font-playfair uppercase tracking-[0.2em] px-4 py-1 rounded-full">Popular</span>
@@ -386,8 +387,8 @@ const Index = () => {
       </section>
 
       {/* Stats */}
-      <section className="py-24 lg:py-32 bg-card">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <section className="py-12 lg:py-16 bg-card">
+        <div className="max-w-3xl mx-auto px-6 lg:px-12">
           <ScrollReveal>
             <div className="text-center mb-16">
               <p className="font-playfair text-sm uppercase tracking-[0.3em] text-primary mb-4">By The Numbers</p>
@@ -397,8 +398,8 @@ const Index = () => {
           <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
             {stats.map((stat, i) => (
               <ScrollReveal key={stat.label} delay={i * 100}>
-                <div className="border border-white/10 rounded-2xl p-6 text-center hover:border-primary/30 transition-all duration-300" style={darkCard}>
-                  <div className="font-cormorant text-4xl md:text-5xl font-light text-primary mb-2">{stat.value}</div>
+                <div className="border border-white/10 rounded-2xl p-4 text-center hover:border-primary/30 transition-all duration-300" style={darkCard}>
+                  <div className="font-cormorant text-3xl md:text-4xl font-light text-primary mb-1">{stat.value}</div>
                   <div className="font-playfair text-xs uppercase tracking-[0.2em] text-white mb-2">{stat.label}</div>
                   <div className="text-white/60 text-xs leading-relaxed whitespace-pre-line">{stat.sub}</div>
                 </div>
@@ -434,7 +435,7 @@ const Index = () => {
               Ready to Elevate Your Position?
             </h2>
             <p className="text-lg max-w-2xl mx-auto mb-12 leading-relaxed font-normal text-primary-foreground">
-              Begin a confidential conversation about how we can protect and enhance what matters most — your reputation.
+              Begin a confidential conversation about how we can protect and enhance what matters most вЂ” your reputation.
             </p>
             <Link to="/contact">
               <Button className="rounded-2xl px-10 py-6 text-base font-playfair tracking-wider uppercase hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
