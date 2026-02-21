@@ -92,11 +92,109 @@ const ContactModal = ({ pkg, onClose }: { pkg: string; onClose: () => void }) =>
   );
 };
 
+
+const ContactModal = ({ pkg, onClose }: { pkg: string; onClose: () => void }) => {
+  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [sent, setSent] = useState(false);
+
+  const handleSubmit = async (e: React.MouseEvent) => {
+    e.preventDefault();
+    setSent(true);
+  };
+
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center px-4" onClick={onClose}>
+      <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" />
+      <div
+        className="relative w-full max-w-md rounded-3xl p-8 border border-white/10 shadow-2xl"
+        style={{backgroundColor: 'rgba(11, 29, 45, 0.97)'}}
+        onClick={(e) => e.stopPropagation()}
+      >
+        <button onClick={onClose} className="absolute top-5 right-5 text-white/40 hover:text-white transition-colors">
+          <X className="w-5 h-5" />
+        </button>
+
+        {!sent ? (
+          <>
+            <p className="font-playfair text-xs uppercase tracking-[0.3em] text-primary mb-2">{pkg} Package</p>
+            <h2 className="font-cormorant text-3xl font-light text-white mb-6">Get Started</h2>
+            <div className="space-y-4">
+              <div>
+                <label className="font-playfair text-xs uppercase tracking-[0.2em] text-white/50 mb-2 block">Full Name</label>
+                <input
+                  type="text"
+                  value={form.name}
+                  onChange={(e) => setForm({ ...form, name: e.target.value })}
+                  placeholder="Your name"
+                  className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/30 focus:outline-none focus:border-primary/50 text-sm"
+                />
+              </div>
+              <div>
+                <label className="font-playfair text-xs uppercase tracking-[0.2em] text-white/50 mb-2 block">Email Address</label>
+                <input
+                  type="email"
+                  value={form.email}
+                  onChange={(e) => setForm({ ...form, email: e.target.value })}
+                  placeholder="your@email.com"
+                  className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/30 focus:outline-none focus:border-primary/50 text-sm"
+                />
+              </div>
+              <div>
+                <label className="font-playfair text-xs uppercase tracking-[0.2em] text-white/50 mb-2 block">Message</label>
+                <textarea
+                  value={form.message}
+                  onChange={(e) => setForm({ ...form, message: e.target.value })}
+                  placeholder="Tell us about your situation..."
+                  rows={3}
+                  className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/30 focus:outline-none focus:border-primary/50 text-sm resize-none"
+                />
+              </div>
+              <button
+                onClick={handleSubmit}
+                className="w-full bg-primary text-primary-foreground font-playfair text-sm uppercase tracking-wider py-4 rounded-2xl hover:scale-[1.02] transition-all duration-300 shadow-lg mt-2"
+              >
+                Send Enquiry <ArrowRight className="inline ml-2 h-4 w-4" />
+              </button>
+            </div>
+          </>
+        ) : (
+          <div className="text-center py-8">
+            <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6">
+              <Check className="w-8 h-8 text-primary" />
+            </div>
+            <h2 className="font-cormorant text-3xl font-light text-white mb-3">Message Received</h2>
+            <p className="text-white/60 text-sm leading-relaxed">Thank you for your enquiry. We will respond within 24 hours.</p>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+};
+
 const Services = () => {
   const [modalPkg, setModalPkg] = useState<string | null>(null);
+  const [modalPkg, setModalPkg] = useState<string | null>(null);
+
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Reputation Management Services",
+    "provider": { "@type": "Organization", "name": "Veliev & Co" },
+    "offers": [
+      { "@type": "Offer", "name": "Basic вЂ” Monitoring & Reviews", "price": "1500", "priceCurrency": "USD" },
+      { "@type": "Offer", "name": "Professional вЂ” Growth & Visibility", "price": "2500", "priceCurrency": "USD" },
+      { "@type": "Offer", "name": "Enterprise вЂ” Full Management", "price": "5000", "priceCurrency": "USD" }
+    ]
+  };
 
   return (
     <>
+      <SEO
+        title="Services & Packages вЂ” Veliev & Co | Online Reputation Management"
+        description="Reputation management packages from $1,500/mo. Monitoring, SERM, SEO, PR and crisis management for law firms, real estate and hospitality."
+        canonical="https://velievco.com/services"
+        schema={schema}
+      />
       <section className="pt-32 pb-20 lg:pt-40 lg:pb-28">
         <div className="max-w-5xl mx-auto px-6 text-center">
           <ScrollReveal>
