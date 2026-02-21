@@ -3,15 +3,18 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { lazy, Suspense } from "react";
 import Layout from "@/components/layout/Layout";
-import Index from "./pages/Index";
-import About from "./pages/About";
-import Services from "./pages/Services";
-import DemoCases from "./pages/DemoCases";
-import CeoInsights from "./pages/CeoInsights";
-import Contact from "./pages/Contact";
-import Privacy from "./pages/Privacy";
-import NotFound from "./pages/NotFound";
+
+// Lazy load all pages for faster initial load
+const Index = lazy(() => import("./pages/Index"));
+const About = lazy(() => import("./pages/About"));
+const Services = lazy(() => import("./pages/Services"));
+const DemoCases = lazy(() => import("./pages/DemoCases"));
+const CeoInsights = lazy(() => import("./pages/CeoInsights"));
+const Contact = lazy(() => import("./pages/Contact"));
+const Privacy = lazy(() => import("./pages/Privacy"));
+const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -29,16 +32,18 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Layout>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/demo-cases" element={<DemoCases />} />
-            <Route path="/ceo-insights" element={<CeoInsights />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/privacy" element={<Privacy />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
+          <Suspense fallback={<div className="min-h-screen" />}>
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/services" element={<Services />} />
+              <Route path="/demo-cases" element={<DemoCases />} />
+              <Route path="/ceo-insights" element={<CeoInsights />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/privacy" element={<Privacy />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </Suspense>
         </Layout>
       </BrowserRouter>
     </TooltipProvider>
