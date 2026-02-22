@@ -173,29 +173,8 @@ const ContactModal = ({ pkg, onClose }: { pkg: string; onClose: () => void }) =>
 
 const Services = () => {
   const [modalPkg, setModalPkg] = useState<string | null>(null);
-  const [modalPkg, setModalPkg] = useState<string | null>(null);
-
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "Reputation Management Services",
-    "provider": { "@type": "Organization", "name": "Veliev & Co" },
-    "offers": [
-      { "@type": "Offer", "name": "Basic вЂ” Monitoring & Reviews", "price": "1500", "priceCurrency": "USD" },
-      { "@type": "Offer", "name": "Professional вЂ” Growth & Visibility", "price": "2500", "priceCurrency": "USD" },
-      { "@type": "Offer", "name": "Enterprise вЂ” Full Management", "price": "5000", "priceCurrency": "USD" }
-    ]
-  };
-
   return (
-    <>
-      <SEO
-        title="Services & Packages вЂ” Veliev & Co | Online Reputation Management"
-        description="Reputation management packages from $1,500/mo. Monitoring, SERM, SEO, PR and crisis management for law firms, real estate and hospitality."
-        canonical="https://velievco.com/services"
-        schema={schema}
-      />
-      <section className="pt-32 pb-20 lg:pt-40 lg:pb-28">
+    <>      <section className="pt-32 pb-20 lg:pt-40 lg:pb-28">
         <div className="max-w-5xl mx-auto px-6 text-center">
           <ScrollReveal>
             <p className="font-playfair text-sm uppercase tracking-[0.3em] text-primary mb-6 font-semibold bg-primary-foreground">Our Service</p>
