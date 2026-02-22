@@ -329,7 +329,7 @@ const Index = () => {
           </ScrollReveal>
           <div className="flex md:hidden gap-5 overflow-x-auto pb-4 snap-x snap-mandatory -mx-6 px-6" style={{ scrollbarWidth: "none" }}>
             {packages.map((pkg) => (
-              <div key={pkg.tier} className={`relative flex flex-col rounded-3xl p-8 border flex-shrink-0 w-[82vw] snap-start ${pkg.highlight ? "border-primary/40" : "border-white/10"}`} style={darkCard}>
+              <div key={pkg.tier} className={`relative flex flex-col rounded-3xl p-8 border flex-shrink-0 w-[82vw] snap-start ${pkg.highlight ? "border-primary/40 pt-10" : "border-white/10"}`} style={darkCard}>
                 {pkg.highlight && (
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2">
                     <span className="bg-primary text-primary-foreground text-xs font-playfair uppercase tracking-[0.2em] px-4 py-1 rounded-full">Popular</span>
@@ -386,8 +386,8 @@ const Index = () => {
       </section>
 
       {/* Stats */}
-      <section className="py-24 lg:py-32 bg-card">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <section className="py-12 lg:py-16 bg-card">
+        <div className="max-w-3xl mx-auto px-6 lg:px-12">
           <ScrollReveal>
             <div className="text-center mb-16">
               <p className="font-playfair text-sm uppercase tracking-[0.3em] text-primary mb-4">By The Numbers</p>
@@ -397,8 +397,8 @@ const Index = () => {
           <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
             {stats.map((stat, i) => (
               <ScrollReveal key={stat.label} delay={i * 100}>
-                <div className="border border-white/10 rounded-2xl p-6 text-center hover:border-primary/30 transition-all duration-300" style={darkCard}>
-                  <div className="font-cormorant text-4xl md:text-5xl font-light text-primary mb-2">{stat.value}</div>
+                <div className="border border-white/10 rounded-2xl p-4 text-center hover:border-primary/30 transition-all duration-300" style={darkCard}>
+                  <div className="font-cormorant text-3xl md:text-4xl font-light text-primary mb-1">{stat.value}</div>
                   <div className="font-playfair text-xs uppercase tracking-[0.2em] text-white mb-2">{stat.label}</div>
                   <div className="text-white/60 text-xs leading-relaxed whitespace-pre-line">{stat.sub}</div>
                 </div>
