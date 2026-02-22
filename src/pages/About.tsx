@@ -1,5 +1,6 @@
 import { useState } from "react";
 import ScrollReveal from "@/components/ScrollReveal";
+import SEO from "@/components/SEO";
 import ceoPhoto from "@/assets/ceo-photo.jpg";
 
 const darkCard = { backgroundColor: "rgba(11, 29, 45, 0.85)" };
@@ -31,8 +32,22 @@ const faqs = [
 ];
 
 const About = () => {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "About Veliev & Co",
+    "description": "Founded on principle, driven by precision. Veliev & Co transforms digital presence into a controlled asset.",
+    "url": "https://velievco.com/about"
+  };
+
   return (
     <>
+      <SEO
+        title="About Us вЂ” Veliev & Co | Reputation Management Agency"
+        description="Founded on principle, driven by precision. Learn how Veliev & Co transforms your digital presence into a controlled, compounding asset."
+        canonical="https://velievco.com/about"
+        schema={schema}
+      />
       <section className="pt-32 pb-20 lg:pt-40 lg:pb-28">
         <div className="max-w-5xl mx-auto px-6 text-center">
           <ScrollReveal>
