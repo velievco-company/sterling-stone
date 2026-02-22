@@ -7,172 +7,104 @@ import { useToast } from "@/hooks/use-toast";
 import { ArrowRight } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
 import { supabase } from "@/integrations/supabase/client";
+import SEO from "@/components/SEO";
 
 const Contact = () => {
   const { toast } = useToast();
   const [loading, setLoading] = useState(false);
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: ""
-  });
+  const [formData, setFormData] = useState({ name: "", email: "", subject: "", message: "" });
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
     try {
-      const { data, error } = await supabase.functions.invoke("trello-lead", {
-        body: formData
-      });
+      const { error } = await supabase.functions.invoke("trello-lead", { body: formData });
       if (error) throw error;
-      toast({
-        title: "Message Received",
-        description: "Thank you for your enquiry. We will respond within 24 hours."
-      });
-      setFormData({ name: "", email: "", subject: "", message: "" });
-    } catch (err) {
-      console.error("Trello error:", err);
-      toast({
-        title: "Message Received",
-        description: "Thank you for your enquiry. We will respond within 24 hours."
-      });
-      setFormData({ name: "", email: "", subject: "", message: "" });
-    } finally {
-      setLoading(false);
-    }
+    } catch {}
+    toast({ title: "Message Received", description: "Thank you for your enquiry. We will respond within 24 hours." });
+    setFormData({ name: "", email: "", subject: "", message: "" });
+    setLoading(false);
   };
 
   return (
     <>
-      {/* Hero */}
+      <SEO
+        title="Contact вЂ” Veliev & Co | Begin the Conversation"
+        description="Reach out to Veliev & Co for a confidential consultation. We respond within 24 hours. All enquiries treated with utmost discretion."
+        canonical="https://velievco.com/contact"
+      />
       <section className="pt-32 pb-20 lg:pt-40 lg:pb-28">
         <div className="max-w-5xl mx-auto px-6 text-center">
           <ScrollReveal>
-            <p className="font-playfair text-sm uppercase tracking-[0.3em] mb-6 bg-primary-foreground" style={{color: '#0b1d2d'}}>
+            <p className="font-playfair text-sm uppercase tracking-[0.3em] mb-6 bg-primary-foreground text-[#0b1d2d]">
               Contact
             </p>
-            <h1 className="font-cormorant text-5xl md:text-6xl lg:text-7xl leading-tight font-semibold" style={{color: '#0b1d2d'}}>
+            <h1 className="font-cormorant text-5xl md:text-6xl lg:text-7xl leading-tight font-semibold text-[#0b1d2d]">
               Begin the
               <br />
-              <span style={{color: '#0b1d2d'}}>Conversation</span>
+              <span className="text-[#0b1d2d]">Conversation</span>
             </h1>
           </ScrollReveal>
         </div>
       </section>
 
-      {/* Form + Info */}
       <section className="pb-24 lg:pb-32">
         <div className="max-w-5xl mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] gap-16">
-            {/* Form */}
             <ScrollReveal>
               <form onSubmit={handleSubmit} className="space-y-8">
                 <div>
-                  <Label
-                    htmlFor="name"
-                    className="font-playfair text-xs uppercase tracking-[0.2em] text-muted-foreground mb-3 block">
-
+                  <Label htmlFor="name" className="font-playfair text-xs uppercase tracking-[0.2em] text-[#0b1d2d] mb-3 block">
                     Full Name
                   </Label>
-                  <Input
-                    id="name"
-                    value={formData.name}
-                    onChange={(e) =>
-                    setFormData({ ...formData, name: e.target.value })
-                    }
+                  <Input id="name" value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     className="bg-card border-border rounded-xl py-6 text-foreground placeholder:text-muted-foreground/50 focus:border-primary"
-                    placeholder="Your name"
-                    required />
-
+                    placeholder="Your name" required />
                 </div>
                 <div>
-                  <Label
-                    htmlFor="email"
-                    className="font-playfair text-xs uppercase tracking-[0.2em] text-muted-foreground mb-3 block">
-
+                  <Label htmlFor="email" className="font-playfair text-xs uppercase tracking-[0.2em] text-[#0b1d2d] mb-3 block">
                     Email Address
                   </Label>
-                  <Input
-                    id="email"
-                    type="email"
-                    value={formData.email}
-                    onChange={(e) =>
-                    setFormData({ ...formData, email: e.target.value })
-                    }
+                  <Input id="email" type="email" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     className="bg-card border-border rounded-xl py-6 text-foreground placeholder:text-muted-foreground/50 focus:border-primary"
-                    placeholder="your@email.com"
-                    required />
-
+                    placeholder="your@email.com" required />
                 </div>
                 <div>
-                  <Label
-                    htmlFor="subject"
-                    className="font-playfair text-xs uppercase tracking-[0.2em] text-muted-foreground mb-3 block">
-
+                  <Label htmlFor="subject" className="font-playfair text-xs uppercase tracking-[0.2em] text-[#0b1d2d] mb-3 block">
                     Subject
                   </Label>
-                  <Input
-                    id="subject"
-                    value={formData.subject}
-                    onChange={(e) =>
-                    setFormData({ ...formData, subject: e.target.value })
-                    }
+                  <Input id="subject" value={formData.subject} onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
                     className="bg-card border-border rounded-xl py-6 text-foreground placeholder:text-muted-foreground/50 focus:border-primary"
-                    placeholder="How can we assist you?"
-                    required />
-
+                    placeholder="How can we assist you?" autoComplete="off" required />
                 </div>
                 <div>
-                  <Label
-                    htmlFor="message"
-                    className="font-playfair text-xs uppercase tracking-[0.2em] text-muted-foreground mb-3 block">
-
+                  <Label htmlFor="message" className="font-playfair text-xs uppercase tracking-[0.2em] text-[#0b1d2d] mb-3 block">
                     Message
                   </Label>
-                  <Textarea
-                    id="message"
-                    value={formData.message}
-                    onChange={(e) =>
-                    setFormData({ ...formData, message: e.target.value })
-                    }
+                  <Textarea id="message" value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     className="bg-card border-border rounded-xl py-4 text-foreground placeholder:text-muted-foreground/50 focus:border-primary min-h-[160px]"
-                    placeholder="Please provide details about your requirements..."
-                    required />
-
+                    placeholder="Please provide details about your requirements..." required />
                 </div>
-                <Button
-                  type="submit"
-                  disabled={loading}
+                <Button type="submit" disabled={loading}
                   className="rounded-2xl px-10 py-6 text-base font-playfair tracking-wider uppercase hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl w-full">
-
                   {loading ? "Sending..." : "Send Enquiry"}
                   {!loading && <ArrowRight className="ml-2 h-4 w-4" />}
                 </Button>
               </form>
             </ScrollReveal>
 
-            {/* Divider */}
             <div className="hidden lg:block w-[1px] bg-border" />
 
-            {/* Contact Info */}
             <ScrollReveal delay={200}>
               <div className="space-y-12 text-primary-foreground">
                 <div>
-                  <p className="font-playfair text-xs uppercase tracking-[0.2em] mb-4 bg-inherit text-primary-foreground">
-                    Email
-                  </p>
-                  <a
-                    href="mailto:contact@velievco.com"
-                    className="transition-colors duration-300 text-lg text-primary-foreground">
+                  <p className="font-playfair text-xs uppercase tracking-[0.2em] mb-4 bg-inherit text-primary-foreground">Email</p>
+                  <a href="mailto:contact@velievco.com" className="transition-colors duration-300 text-lg text-primary-foreground">
                     contact@velievco.com
-
                   </a>
                 </div>
                 <div>
-                  <p className="font-playfair text-xs uppercase tracking-[0.2em] mb-4 font-medium bg-inherit text-primary-foreground">
-                    Connect
-                  </p>
+                  <p className="font-playfair text-xs uppercase tracking-[0.2em] mb-4 font-medium bg-inherit text-primary-foreground">Connect</p>
                   <div className="flex gap-5 text-primary-foreground">
                     <a href="#" className="text-muted-foreground hover:text-brown transition-colors duration-300" aria-label="LinkedIn">
                       <svg className="w-5 h-5 text-[#0b1d2d]" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" /></svg>
@@ -193,9 +125,7 @@ const Contact = () => {
                     "All enquiries are treated with the utmost confidentiality."
                   </p>
                   <p className="text-muted-foreground text-sm leading-relaxed">
-                    We respond to all enquiries within one business day. For
-                    urgent matters, please indicate priority in your subject
-                    line.
+                    We respond to all enquiries within one business day. For urgent matters, please indicate priority in your subject line.
                   </p>
                 </div>
               </div>
@@ -203,8 +133,8 @@ const Contact = () => {
           </div>
         </div>
       </section>
-    </>);
-
+    </>
+  );
 };
 
 export default Contact;
