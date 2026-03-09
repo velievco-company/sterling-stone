@@ -8,7 +8,8 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* Brand */}
           <div>
-            <img src={logo} alt="Veliev & Co" className="h-[100px] w-auto mb-4" />
+            <img src={logo} alt="Veliev & Co" loading="lazy" className="h-[100px] w-auto mb-4" />
+            <p className="text-xs uppercase tracking-[0.15em] text-muted-foreground/60 mb-3">reputation management</p>
             <p className="text-muted-foreground text-sm leading-relaxed max-w-xs">
               Discreet Excellence. Measurable Results. Strategic reputation
               management for discerning clients.
@@ -27,6 +28,7 @@ const Footer = () => {
               { name: "Our Service", path: "/services" },
               { name: "Demo-Cases", path: "/demo-cases" },
               { name: "CEO Insights", path: "/ceo-insights" },
+              { name: "FAQ", path: "/faq" },
               { name: "Contact", path: "/contact" },
               { name: "Privacy Policy", path: "/privacy" }].
               map((link) =>

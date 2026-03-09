@@ -67,7 +67,13 @@
   }
 
   h1, h2 {
-    font-family: "Cinzel", serif;
+    font-family: "Copperplate", "Cinzel", serif;
+  }
+
+  @media (max-width: 767px) {
+    body {
+      color: hsl(30 39% 85%);
+    }
   }
 
   html {

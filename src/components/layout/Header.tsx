@@ -18,6 +18,9 @@ const navLinks = [{
   name: "CEO Insights",
   path: "/ceo-insights"
 }, {
+  name: "FAQ",
+  path: "/faq"
+}, {
   name: "Contact",
   path: "/contact"
 }];
